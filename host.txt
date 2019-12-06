@@ -1,0 +1,7 @@
+#springcloud ≈‰÷√
+127.0.0.1			eureka7001
+127.0.0.1			eureka7002
+127.0.0.1			eureka7003
+127.0.0.1			myzuul
+127.0.0.1			config
+127.0.0.1			config-client

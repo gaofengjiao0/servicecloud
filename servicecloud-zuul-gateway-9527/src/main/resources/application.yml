@@ -1,0 +1,28 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: servicecloud-zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001:7001/eureka/,http://eureka7002:7002/eureka/,http://eureka7003:7003/eureka/
+  instance:
+    instance-id: gateway-9527
+    prefer-ip-address: true
+
+info:
+  app.name: gateway
+  compay.name: wwww.gfj.com
+  build.artifactId: servicecloud-provider-dept-hystrix-9001
+  build.version: 1.0-SNAPSHOT
+
+zuul:
+  routes:     #地址映射
+#    mydept.serviceId: servicecloud-dept
+    mydept.serviceId: servicecloud-config-dept-client
+    mydept.path: /mydept/**
+  ignored-services: "*"   #禁用所有的原服务名访问
+  prefix: /gfj    #配置统一的前缀
